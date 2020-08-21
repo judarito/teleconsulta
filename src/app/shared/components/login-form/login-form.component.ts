@@ -8,6 +8,7 @@ import { DxCheckBoxModule } from 'devextreme-angular/ui/check-box';
 import { DxTextBoxModule } from 'devextreme-angular/ui/text-box';
 import { DxValidatorModule } from 'devextreme-angular/ui/validator';
 import { DxValidationGroupModule } from 'devextreme-angular/ui/validation-group';
+import {  DxLoadPanelModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-login-form',
@@ -17,6 +18,7 @@ import { DxValidationGroupModule } from 'devextreme-angular/ui/validation-group'
 export class LoginFormComponent {
   login = '';
   password = '';
+  public loadingVisible:boolean;
 
   constructor(private authService: AuthService, public appInfo: AppInfoService) { }
 
@@ -24,7 +26,7 @@ export class LoginFormComponent {
     if (!args.validationGroup.validate().isValid) {
       return;
     }
-
+    this.loadingVisible=true;
     this.authService.logIn(this.login, this.password);
 
     args.validationGroup.reset();
@@ -38,7 +40,8 @@ export class LoginFormComponent {
     DxCheckBoxModule,
     DxTextBoxModule,
     DxValidatorModule,
-    DxValidationGroupModule
+    DxValidationGroupModule,
+    DxLoadPanelModule
   ],
   declarations: [ LoginFormComponent ],
   exports: [ LoginFormComponent ]

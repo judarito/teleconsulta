@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  UrlBaseApi:'http://localhost:1337/'
+  /*UrlBaseApi:'https://strapi-onlineapp.herokuapp.com/'*/  
 };
 
 /*

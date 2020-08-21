@@ -14,24 +14,24 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-  
     children:
           [
-            {
-              path: 'countries',
-              component: CountriesComponent,
-              canActivate: [ AuthGuardService ]
-            },
+          {
+            path: 'countries',
+            component: CountriesComponent,
+            canActivate: [ AuthGuardService ]
+          },
+          {
+            path: '',
+            component: HomeComponent,
+            canActivate: [ AuthGuardService ]
+          },
           {
             path: 'display-data',
             component: DisplayDataComponent,
             canActivate: [ AuthGuardService ]
           },
-          {
-            path: 'profile',
-            component: ProfileComponent,
-            canActivate: [ AuthGuardService ]
-          },
+         
           {
             path: 'home',
             component: HomeComponent,
@@ -41,12 +41,21 @@ const routes: Routes = [
             path: 'login-form',
             component: LoginFormComponent,
             canActivate: [ AuthGuardService ]
-          },
-          {
-            path: '**',
-            redirectTo: 'home',
-            canActivate: [ AuthGuardService ]
           }]
+},
+{
+  path:'',
+  component:PublicComponent,
+  children:[
+    {
+      path: 'profile',
+      component: ProfileComponent
+    }
+  ]
+},
+{
+  path:'**',
+  redirectTo: 'home'
 }
 ];
 

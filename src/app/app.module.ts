@@ -14,6 +14,13 @@ import { CountriesService } from './httpServices/countries/countries.service';
 import { CountriesModule } from './pages/countries/countries.component';
 import { MainComponent } from './main/main.component';
 import { PublicComponent } from './public/public.component';
+import { VideocallModule } from './pages/videocall/videocall.component';
+import { ExternalloginModule } from './pages/externallogin/externallogin.component';
+import { callSessionService } from './httpServices/callSession/callSession.service';
+
+
+
+
 
 export function jwtTokenGetter() {
   return '';
@@ -39,6 +46,8 @@ export function jwtTokenGetter() {
     AppRoutingModule,
     HttpClientModule,
     CountriesModule,
+    VideocallModule,
+    ExternalloginModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
@@ -52,6 +61,7 @@ export function jwtTokenGetter() {
               LoaderService,
               AuthHttpService,
               CountriesService,
+              callSessionService,
               { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
               ],
   bootstrap: [AppComponent]

@@ -24,16 +24,16 @@ export class AuthService {
    
     let loginRequestModel: LoginRequestModel
     loginRequestModel={
-      identifier:login,
-      password:passord
+      Username:login,
+      Password:passord
     }
     this.authHttpService.Login(loginRequestModel).subscribe((res)=>{
       console.log(res);
       this.loggedIn = true;
 
-      if(res.jwt){
+      if(res.token){
         this.loggedIn = true;
-        localStorage.setItem("jwt",res.jwt);
+        localStorage.setItem("jwt",res.token);
         this.router.navigate(['/']);
       }
     },(Err:any)=>{

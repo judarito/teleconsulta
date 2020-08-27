@@ -1,6 +1,6 @@
 export interface LoginRequestModel {
-    identifier: string;
-    password: string;
+    Username: string;
+    Password: string;
   }
 
   export interface LoginResponseModel {
@@ -9,12 +9,10 @@ export interface LoginRequestModel {
   }
 
   export interface UserLoginModel {
-    confirmed: boolean;
-    blocked: boolean;
-    id: string;
-    username: string;
-    email: string;
-    provider: string;
-    createdAt: string;
-    updatedAt: string;
+    id: number;
+    username: boolean;
+    firstName: string;
+    lastName: string;
+    token: string;
+    
   }

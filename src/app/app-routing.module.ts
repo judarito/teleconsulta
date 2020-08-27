@@ -9,6 +9,8 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { MainComponent } from './main/main.component';
 import { PublicComponent } from './public/public.component';
+import { ExternalloginComponent } from './pages/externallogin/externallogin.component';
+import { VideocallComponent } from './pages/videocall/videocall.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,15 @@ const routes: Routes = [
     {
       path: 'profile',
       component: ProfileComponent
+    },
+    {
+      path: 'Elogin/:id',
+      component: ExternalloginComponent
+    },
+    {
+      path: 'video/:id',
+      component: VideocallComponent,
+      canActivate: [ AuthGuardService ]
     }
   ]
 },

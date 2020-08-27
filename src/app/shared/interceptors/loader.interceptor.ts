@@ -14,6 +14,9 @@ export class LoaderInterceptor implements HttpInterceptor {
             headers=new HttpHeaders({
                 'Content-Type':  'application/json',
                 'Authorization':`Bearer ${token}`,
+                'X-Requested-With': 'XMLHttpRequest',
+                'MyClientCert': '',        // This is empty
+                'MyToken': ''       
               })
         }else{
             headers=new HttpHeaders({

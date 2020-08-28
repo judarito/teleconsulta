@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { PublicComponent } from './public/public.component';
 import { ExternalloginComponent } from './pages/externallogin/externallogin.component';
 import { VideocallComponent } from './pages/videocall/videocall.component';
+import { RegisterFormComponent } from './shared/components/register-form/register-form.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,11 @@ const routes: Routes = [
             component: DisplayDataComponent,
             canActivate: [ AuthGuardService ]
           },
-         
+          {
+            path: 'register',
+            component: RegisterFormComponent,
+            canActivate: [ AuthGuardService ]
+          },
           {
             path: 'home',
             component: HomeComponent,

@@ -17,6 +17,7 @@ import { PublicComponent } from './public/public.component';
 import { VideocallModule } from './pages/videocall/videocall.component';
 import { ExternalloginModule } from './pages/externallogin/externallogin.component';
 import { callSessionService } from './httpServices/callSession/callSession.service';
+import { RegisterFormComponent, RegisterFormModule } from './shared/components/register-form/register-form.component';
 
 
 
@@ -33,7 +34,8 @@ export function jwtTokenGetter() {
   declarations: [
     AppComponent,
     MainComponent,
-    PublicComponent
+    PublicComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ export function jwtTokenGetter() {
     SingleCardModule,
     FooterModule,
     LoginFormModule,
+    RegisterFormModule,
     LoaderModule,
     AppRoutingModule,
     HttpClientModule,

@@ -24,6 +24,7 @@ export class RegisterFormComponent implements OnInit {
         value: this.password
     };
     customer: any;
+    employee:any;
     countries: string[];
     cities: string[];
     maxDate: Date = new Date();
@@ -70,8 +71,9 @@ export class RegisterFormComponent implements OnInit {
         DxNumberBoxModule,
         DxButtonModule,
         DxAutocompleteModule,
-        DxFormModule,
+        DxFormModule
         
   ],
+  bootstrap: [RegisterFormComponent]
 })
 export class RegisterFormModule { }

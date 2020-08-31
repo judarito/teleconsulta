@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-videocall',
@@ -7,9 +8,13 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 export class VideocallComponent implements OnInit {
 
-  constructor() { }
+  public RoomId:string;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+   this.route.params.subscribe(params => {
+      this.RoomId=params.id
+   });
   }
 
 }

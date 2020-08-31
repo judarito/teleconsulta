@@ -12,7 +12,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-themes": "devextreme build",
-    "postinstall": "npm run build-themes"
+    "postinstall": "npm run build-themes",
+    "prod":"ng build --prod --base-href=\"/\""
   },
   "private": true,
   "dependencies": {

@@ -17,16 +17,18 @@ export class ExternalloginComponent implements OnInit {
    }
 
   ngOnInit() {
-        this.callsessionservice.getcallSession(this.route.snapshot.params.id).subscribe(res=>{
+    this.route.params.subscribe(params => {
+        this.callsessionservice.getcallSession(params.id).subscribe(res=>{
           console.log(res);
           if(res){         
-             localStorage.setItem("jwt", res.jwt);
-             this.router.navigate(['/video/',  this.route.snapshot.params.id ]);
-            }
+            localStorage.setItem("jwt", res.jwt);
+            this.router.navigate(['/video/',  params.id ]);
+          }
         },(error:any)=>{
           console.log(error);
           notify(error.message,"error",2000);
         });
+    });
   }
 
 }

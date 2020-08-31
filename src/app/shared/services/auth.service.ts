@@ -15,10 +15,15 @@ export class AuthService {
 
   constructor(private router: Router,
               public jwtHelper: JwtHelperService,
-              private authHttpService: AuthHttpService) {
+              private authHttpService: AuthHttpService,
+              private http: HttpClient
+              ) {
                 this.jwtHelper=new JwtHelperService();
               
-              }
+  }
+  registerCompany(company:any){
+    return this.http.post('http://18.222.231.56:3000/Company/register',company);
+}
 
   logIn(login: string, passord: string) {
    

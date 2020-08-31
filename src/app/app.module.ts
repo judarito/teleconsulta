@@ -18,7 +18,15 @@ import { VideocallModule } from './pages/videocall/videocall.component';
 import { ExternalloginModule } from './pages/externallogin/externallogin.component';
 import { callSessionService } from './httpServices/callSession/callSession.service';
 import { RegisterFormComponent, RegisterFormModule } from './shared/components/register-form/register-form.component';
-import { DxFormModule } from 'devextreme-angular';
+import { DxFormModule, DxButtonModule } from 'devextreme-angular';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 
@@ -39,26 +47,34 @@ export function jwtTokenGetter() {
     RegisterFormComponent
   ],
   imports: [
+    MatSelectModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    FormsModule ,
+    MatFormFieldModule,
+    DxButtonModule ,
+    ReactiveFormsModule,
+    RegisterFormModule,
     BrowserModule,
     SideNavOuterToolbarModule,
     SideNavInnerToolbarModule,
     SingleCardModule,
     FooterModule,
     LoginFormModule,
-    RegisterFormModule,
     LoaderModule,
     AppRoutingModule,
     HttpClientModule,
     CountriesModule,
     VideocallModule,
     ExternalloginModule,
-    RegisterFormModule,
     DxFormModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [AuthService, 
               ScreenService, 

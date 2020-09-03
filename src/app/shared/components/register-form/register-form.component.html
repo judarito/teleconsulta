@@ -7,62 +7,63 @@
         
         [colCount]="2">
         <dxi-item itemType="group" caption="INFORMACION DE LA EMPRESA">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Code</mat-label>
                 <input matInput formControlName="code">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Name</mat-label>
                 <input matInput formControlName="name">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="email">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>identification</mat-label>
                 <input matInput formControlName="identification">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>contact Name</mat-label>
                 <input matInput formControlName="contactName">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>contact Email</mat-label>
                 <input matInput formControlName="contactEmail">
               </mat-form-field>
         </dxi-item>
         <dxi-item itemType="group" caption="INFORMACION DE LA CUENTA">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Username</mat-label>
                 <input matInput formControlName="username">
               </mat-form-field>
               <br>
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Password</mat-label>
                 <input matInput formControlName="password">
               </mat-form-field>
         </dxi-item>
         <dxi-item itemType="group" caption="SELECCIONE UN PLAN">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="width: 482px !important;">
                 <mat-label>Seleccionar plan</mat-label>
                 <mat-select formControlName="idplan">
-                  <mat-option *ngFor="let i of arraySelect" value="{{ i.value }}">{{ i.text }}</mat-option>
+                  <mat-option *ngFor="let i of arraySelect" value="{{ i.value }}" (click)="convertir()">{{ i.text }}</mat-option>
                   <!-- <mat-option value="p2">Plan 2</mat-option>
                   <mat-option value="p3">Plan 3</mat-option> -->
                 </mat-select>
               </mat-form-field>
-              <button mat-raised-button color="success" (click)="convertir()">Seleccionar</button>
+              <button mat-raised-button color="primary" (click)="guardar()">Register</button>
+              <!-- <button mat-raised-button color="success" (click)="convertir()">Seleccionar</button> -->
               <!-- <p>{{ formRegister.value.idplan }}</p> -->
         </dxi-item>
         <dxi-item itemType="group" caption="ESPECIFICACIONES DEL PLAN">
             <!-- Card por defecto -->
-            <mat-card  class="example-card" style="max-width: 250px;" *ngIf="plan0">
+            <mat-card  class="example-card" style="max-width: 350px;" *ngIf="plan0">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title>ESCOJA UN PLAN</mat-card-title>
@@ -70,7 +71,7 @@
                 <img mat-card-image src="https://dummyimage.com/600x400/9e989e/0a0a0a&text=+ESCOJA+PLAN" alt="Photo of a Shiba Inu">
               </mat-card>
             <!-- card 1 -->
-            <mat-card  class="example-card" style="max-width: 250px;" *ngIf="plan1">
+            <mat-card  class="example-card" style="max-width: 350px;" *ngIf="plan1">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title>Plan 1</mat-card-title>
@@ -84,7 +85,7 @@
                 </mat-card-content>
               </mat-card>
             <!-- Card2 -->
-              <mat-card class="example-card" style="max-width: 250px;" *ngIf="plan2">
+              <mat-card class="example-card" style="max-width: 350px;" *ngIf="plan2">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title>Plan 2</mat-card-title>
@@ -98,7 +99,7 @@
                 </mat-card-content>
               </mat-card>
               <!-- card3 -->
-              <mat-card class="example-card" style="max-width: 250px;" *ngIf="plan3">
+              <mat-card class="example-card" style="max-width: 350px;" *ngIf="plan3">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title>Plan 3</mat-card-title>
@@ -113,9 +114,9 @@
               </mat-card>
             <br>  
         </dxi-item>
-        <dxi-item>
+        <!-- <dxi-item>
             <button mat-raised-button color="primary" (click)="guardar()">Register</button>
-        </dxi-item>
+        </dxi-item> -->
     </dx-form>
 </div>
 

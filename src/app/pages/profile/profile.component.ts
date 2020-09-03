@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileService } from 'src/app/shared/services/profile.service';
 
 @Component({
   templateUrl: 'profile.component.html',
@@ -9,7 +10,7 @@ export class ProfileComponent {
   employee: any;
   colCountByScreen: object;
 
-  constructor() {
+  constructor(private profileservice: ProfileService) {
     this.employee = {
       ID: 7,
       FirstName: 'Sandra',

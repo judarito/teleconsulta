@@ -19,6 +19,11 @@ const routes: Routes = [
     component: MainComponent,
     children:
           [
+            {
+              path: 'profile',
+              component: ProfileComponent,
+              canActivate: [ AuthGuardService ]
+            },
           {
             path: 'countries',
             component: CountriesComponent,
@@ -32,11 +37,6 @@ const routes: Routes = [
           {
             path: 'display-data',
             component: DisplayDataComponent,
-            canActivate: [ AuthGuardService ]
-          },
-          {
-            path: 'register',
-            component: RegisterFormComponent,
             canActivate: [ AuthGuardService ]
           },
           {
@@ -54,9 +54,11 @@ const routes: Routes = [
   path:'',
   component:PublicComponent,
   children:[
+    
     {
-      path: 'profile',
-      component: ProfileComponent
+      path: 'register',
+      component: RegisterFormComponent,
+      
     },
     {
       path: 'Elogin/:id',

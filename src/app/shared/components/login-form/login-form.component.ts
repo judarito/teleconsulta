@@ -15,7 +15,7 @@ import {  DxLoadPanelModule } from 'devextreme-angular';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
+export class LoginFormComponent { 
   login = '';
   password = '';
   public loadingVisible:boolean;

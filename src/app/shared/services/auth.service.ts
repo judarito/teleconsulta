@@ -43,7 +43,7 @@ export class AuthService {
       }
     },(Err:any)=>{
       console.log(Err);
-      notify("Error al iniciar session","error",2000);
+      notify("Error al iniciar session","error",2000); 
     })
     
   }

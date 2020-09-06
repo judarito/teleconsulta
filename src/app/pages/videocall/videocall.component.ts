@@ -1,5 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-videocall',
@@ -7,16 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./videocall.component.scss']
 })
 export class VideocallComponent implements OnInit {
-
+  @ViewChild('iframe') iframe: ElementRef
   public RoomId:string;
   public urlTokboxIframe:string="";
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
    this.route.params.subscribe(params => {
       this.RoomId=params.id
       this.urlTokboxIframe=`https://tokbox.com/embed/embed/ot-embed.js?embedId=3b0e2358-bf4c-4738-a2c6-f8e9bbd1c776&room=${this.RoomId}&iframe=true`
-   });
+      
+    });
   }
 
 }

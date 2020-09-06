@@ -1,8 +1,7 @@
-<h2>Bienvenido a SysConsulta</h2>
-<iframe 
-[src]="urlTokboxIframe" 
-class="iframe-container"
-scrolling="auto" 
+
+<iframe
+[src]="sanitizer.bypassSecurityTrustResourceUrl(urlTokboxIframe)" 
+style="width:95vw; height: 80vh; margin-left: 7px; margin-right: 7px;"
 allow="microphone; camera" 
 allowfullscreen
 ></iframe>

@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   //UrlBaseApi:'http://localhost:1337/'
-  //UrlBaseApi:'https://app-apiteleconsulta.herokuapp.com/'
-  UrlBaseApi:'http://localhost:3000/'
+  UrlBaseApi:'https://api.sysconsulta.com/'
+ // UrlBaseApi:'http://localhost:3000/'
 };
 
 /*

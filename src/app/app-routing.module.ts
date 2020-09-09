@@ -67,7 +67,7 @@ const routes: Routes = [
     {
       path: 'video/:id',
       component: VideocallComponent,
-      canActivate: [ AuthGuardService ]
+      //canActivate: [ AuthGuardService ]
     }
   ]
 },

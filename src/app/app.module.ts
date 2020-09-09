@@ -14,8 +14,8 @@ import { CountriesService } from './httpServices/countries/countries.service';
 import { CountriesModule } from './pages/countries/countries.component';
 import { MainComponent } from './main/main.component';
 import { PublicComponent } from './public/public.component';
-import { VideocallModule } from './pages/videocall/videocall.component';
-import { ExternalloginModule } from './pages/externallogin/externallogin.component';
+import { VideocallModule, VideocallComponent } from './pages/videocall/videocall.component';
+import { ExternalloginModule, ExternalloginComponent } from './pages/externallogin/externallogin.component';
 import { callSessionService } from './httpServices/callSession/callSession.service';
 import { RegisterFormComponent, RegisterFormModule } from './shared/components/register-form/register-form.component';
 import { DxFormModule, DxButtonModule } from 'devextreme-angular';
@@ -44,7 +44,9 @@ export function jwtTokenGetter() {
     AppComponent,
     MainComponent,
     PublicComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    VideocallComponent,
+    ExternalloginComponent
   ],
   imports: [
     MatSelectModule,

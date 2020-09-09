@@ -9,9 +9,9 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { MainComponent } from './main/main.component';
 import { PublicComponent } from './public/public.component';
+import { RegisterFormComponent } from './shared/components/register-form/register-form.component';
 import { ExternalloginComponent } from './pages/externallogin/externallogin.component';
 import { VideocallComponent } from './pages/videocall/videocall.component';
-import { RegisterFormComponent } from './shared/components/register-form/register-form.component';
 
 const routes: Routes = [
   {

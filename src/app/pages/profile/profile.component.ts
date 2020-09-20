@@ -1,5 +1,7 @@
+import { AuthService } from './../../shared/services/auth.service';
 import { Component } from '@angular/core';
-import { ProfileService } from 'src/app/shared/services/profile.service';
+import { ProfileService } from 'src/app/httpServices/profile/profile.service';
+
 
 @Component({
   templateUrl: 'profile.component.html',
@@ -9,10 +11,16 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
 export class ProfileComponent {
   employee: any;
   colCountByScreen: object;
+  idUserLoged = localStorage.getItem('iduser');
 
-  constructor(private profileservice: ProfileService) {
+  constructor(private profileservice: ProfileService, private auth:AuthService) {
+
+    this.profileservice.getProfileById(this.idUserLoged).subscribe((res)=>{
+      console.log(res)
+    })    
+
     this.employee = {
-      ID: 7,
+      ID: this.idUserLoged,
       FirstName: 'Sandra',
       LastName: 'Johnson',
       Prefix: 'Mrs.',

@@ -6,7 +6,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule, MatButtonModule} from '@angular/material'
 import {MatCardModule} from '@angular/material/card';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { AuthService } from './../../services/auth.service';
 import { DxCheckBoxModule,
          DxSelectBoxModule,
          DxNumberBoxModule,
@@ -15,6 +14,7 @@ import { DxCheckBoxModule,
          DxAutocompleteModule,
          DxFormComponent, 
          DxListModule} from 'devextreme-angular';
+import { CompanyService } from 'src/app/httpServices/company/company.service';
 
 
 
@@ -37,12 +37,12 @@ export class RegisterFormComponent implements OnInit {
     {text:'Plan3', value:'p3'}
   ];
 
-  constructor(private auth: AuthService, private fb:FormBuilder, private route:Router ){
+  constructor(private company: CompanyService, private fb:FormBuilder, private route:Router ){
     this.crearFormulario();
   }
   crearFormulario(){
     this.formRegister = this.fb.group({
-      code : ['', Validators.required],
+      // code : ['', Validators.required],
       name : ['', Validators.required],
       email : ['', Validators.required],
       identification : ['', Validators.required],
@@ -83,7 +83,7 @@ export class RegisterFormComponent implements OnInit {
       // const formjson = JSON.stringify(this.formRegister.value)  
       // console.log(formjson)
       console.log(this.formRegister.value)
-      this.auth.registerCompany(this.formRegister.value).subscribe( (res) =>{
+      this.company.registerCompany(this.formRegister.value).subscribe( (res) =>{
         console.log(res,'enviado');
       })
       this.route.navigate(['/login-form']);

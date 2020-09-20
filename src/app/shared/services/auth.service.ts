@@ -12,6 +12,7 @@ const jwtHelper = new JwtHelperService();
 @Injectable()
 export class AuthService {
   loggedIn = true;
+  
 
   constructor(private router: Router,
               public jwtHelper: JwtHelperService,
@@ -21,9 +22,6 @@ export class AuthService {
                 this.jwtHelper=new JwtHelperService();
               
   }
-  registerCompany(company:any){
-    return this.http.post('http://18.222.231.56:3000/Company/register',company);
-}
 
   logIn(login: string, passord: string) {
    
@@ -33,8 +31,10 @@ export class AuthService {
       Password:passord
     }
     this.authHttpService.Login(loginRequestModel).subscribe((res)=>{
-      console.log(res);
+      console.log(res.token);
+      localStorage.setItem('iduser',res.id)
       this.loggedIn = true;
+
 
       if(res.token){
         this.loggedIn = true;
